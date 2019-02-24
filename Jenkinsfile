@@ -1,14 +1,18 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'mymaven' 
+    }
+
     stages{
         stage ('Clean Stage'){
             steps{
-                withMaven(maven: 'mymaven'){
+                
 
                     sh 'mvn clean'
 
-                }
+                
             }   
 
         }
@@ -16,22 +20,22 @@ pipeline {
 
         stage ('Install Stage'){
             steps{
-                withMaven(maven: 'mymaven'){
+                
 
                     sh 'mvn install'
 
-                }
+                
             }   
 
         }
 
         stage ('Package Stage'){
             steps{
-                withMaven(maven: 'mymaven'){
+                
 
                     sh 'mvn package'
 
-                }
+                
             }   
 
         }        
