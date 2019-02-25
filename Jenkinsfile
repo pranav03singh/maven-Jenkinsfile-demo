@@ -17,16 +17,7 @@ pipeline {
 
         }
 
-        stage ('Build Stage'){
-            steps{
-                
-
-                    sh 'mvn build'
-
-                
-            }   
-
-        }
+        
 
 
 
